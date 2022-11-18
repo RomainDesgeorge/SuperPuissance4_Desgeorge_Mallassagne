@@ -9,5 +9,25 @@ package sp4_mallassagne_desgeorge;
  * @author rom
  */
 public class Jeton {
+    private String couleur;
+    public Jeton (String Couleur){
+        couleur=Couleur;
+    }
+
+    public String getCouleur() {
+        return couleur;
+    }
+
+    @Override
+    public String toString() {
+        String color;
+        if ("rouge".equals(couleur)){
+            color="R";
+        }
+        else{
+            color="J";
+        }
+        return color;
+    }
     
 }
