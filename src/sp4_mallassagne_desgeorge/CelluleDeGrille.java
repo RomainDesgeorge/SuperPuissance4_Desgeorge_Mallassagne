@@ -6,7 +6,7 @@ package sp4_mallassagne_desgeorge;
 
 /**
  *
- * @author rom
+ * @author Alexis Mallassagne et Romain Desgeorgessss
  */
 public class CelluleDeGrille {
     public CelluleDeGrille(){
@@ -20,6 +20,10 @@ public class CelluleDeGrille {
     private boolean avoirTrouNoir;
     private boolean avoirDesintegrateur;
     
+    /**
+     *Verifie la présence d'un jeton dans la cellule
+     * @return
+     */
     public boolean presenceJeton(){
         boolean verif = false;
         if(jetonCourant != null){
@@ -27,9 +31,19 @@ public class CelluleDeGrille {
         }
         return verif;
     }
+
+    /**
+     *Ajout du jeton dans la cellule
+     * @param jeton
+     */
     public void affecterJeton(Jeton jeton){  
         jetonCourant = jeton;
     } 
+
+    /**
+     *Lis la couleur du jeton dans la cellule
+     * @return la couleur du jeton
+     */
     public String lireCouleurDuJeton(){
         String couleur;
         if(jetonCourant != null){
@@ -43,12 +57,27 @@ public class CelluleDeGrille {
         }
         return couleur;
     }
+
+    /**Donne la valeur true à la variable avoirTrouNoir
+     * Met un trou noir dans la cellule
+     *
+     */
     public void placerTrouNoir(){
         avoirTrouNoir = true;
     }
+
+    /**Donne la valeur false à la variable avoirTrouNoir
+     * Enleve le trou noir de la cellule
+     *
+     */
     public void supprimerTrouNoir(){
         avoirTrouNoir = false;
     }
+
+    /**Verifie la présence d'un trou noir dans la cellule
+     *
+     * @return true ou false en fonction de la présence d'un trou noir
+     */
     public boolean presenceTrouNoir(){
         boolean verif = false;
         if (avoirTrouNoir == true){
@@ -56,6 +85,11 @@ public class CelluleDeGrille {
         }
         return verif;
     }
+
+    /**Vide la case et retourne le jeton enlevé
+     *
+     * @return
+     */
     public Jeton recupererJeton(){
         Jeton jetonarecup = null;
         if (jetonCourant != null){
@@ -64,9 +98,18 @@ public class CelluleDeGrille {
         }
         return jetonarecup;
     }
+
+    /**Vide la case de son jeton (supprime le jeton)
+     *
+     */
     public void supprimerJeton(){
         jetonCourant = null;
     }
+
+    /**Verifie la présence d'un desintegrateur dans la cellule
+     *
+     * @return true ou false en fonction de la présence d'un desintegrateur
+     */
     public boolean presenceDesintegrateur(){
         boolean verif;
         if (avoirDesintegrateur == true){
@@ -76,12 +119,24 @@ public class CelluleDeGrille {
         }
         return verif;        
     }
+
+    /**Met un desintegrateur dans la cellule
+     *
+     */
     public void placerDesintegrateur(){
         avoirDesintegrateur = true;
     }
+
+    /**Supprime le desintegrateur de la cellule
+     *
+     */
     public void supprimerDesintegrateur(){
         avoirDesintegrateur = false;
     }
+
+    /**Active le trou noir donc supprime le jeton et le trou noir
+     *
+     */
     public void activerTrouNoir(){
         supprimerJeton();
         supprimerTrouNoir();
