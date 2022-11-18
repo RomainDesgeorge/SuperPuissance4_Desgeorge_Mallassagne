@@ -19,7 +19,28 @@ public class PlateauDeJeu {
         }
     }
     public void ajouterJetonDansColonne(Jeton jeton, int nb){
-        
+        int nbligne = 0;
+        for(int i=0;i<6;i++){
+            if (grille[i][nb] != null){
+                nbligne += 1;
+            }else{
+                break;
+            }
+        grille[nbligne][nb].affecterJeton(jeton);   
+        }
+
+    }    
+    public boolean grilleRemplie(){
+        boolean verif = true;
+        for (int i=0;i<7;i++){
+            for (int j=0; j<6;j++){
+                if (grille[j][i] == null){
+                    verif = false;
+                    break;
+                }
+            }
+        }
+        return verif;
     }
 }
 
