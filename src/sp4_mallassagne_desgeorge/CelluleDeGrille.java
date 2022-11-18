@@ -8,7 +8,6 @@ package sp4_mallassagne_desgeorge;
  *
  * @author rom
  */
-public class Jeton {
-    
+public class CelluleDeGrille {
     
 }
