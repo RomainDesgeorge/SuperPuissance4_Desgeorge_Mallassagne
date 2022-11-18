@@ -27,5 +27,26 @@ public class CelluleDeGrille {
         }
         return verif;
     }
-    
+    public void affecterJeton(Jeton jeton){  
+        jetonCourant = jeton;
+    } 
+    public String lireCouleurDuJeton(){
+        String couleur;
+        if(jetonCourant != null){
+            if ("r".equals(jetonCourant.toString())){
+                couleur = "rouge";
+            }else{
+                couleur = "jaune";
+            }
+        }else{
+            couleur = null;
+        }
+        return couleur;
+    }
+    public void placeTrouNoir(){
+        avoirTrouNoir = true;
+    }
+    public void supprimeTrouNoir(){
+        avoirTrouNoir = false;
+    }
 }
