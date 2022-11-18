@@ -33,7 +33,7 @@ public class CelluleDeGrille {
     public String lireCouleurDuJeton(){
         String couleur;
         if(jetonCourant != null){
-            if ("r".equals(jetonCourant.toString())){
+            if ("R".equals(jetonCourant.toString())){
                 couleur = "rouge";
             }else{
                 couleur = "jaune";
@@ -43,10 +43,45 @@ public class CelluleDeGrille {
         }
         return couleur;
     }
-    public void placeTrouNoir(){
+    public void placerTrouNoir(){
         avoirTrouNoir = true;
     }
-    public void supprimeTrouNoir(){
+    public void supprimerTrouNoir(){
         avoirTrouNoir = false;
     }
+    public boolean presenceTrouNoir(){
+        boolean verif = false;
+        if (avoirTrouNoir == true){
+            verif = true;            
+        }
+        return verif;
+    }
+    public Jeton recupererJeton(){
+        Jeton jetonarecup = null;
+        if (jetonCourant != null){
+            jetonarecup = jetonCourant;
+            jetonCourant = null;
+        }
+        return jetonarecup;
+    }
+    public void supprimerJeton(){
+        jetonCourant = null;
+    }
+    public boolean presenceDesintegrateur(){
+        boolean verif = false;
+        if (avoirDesintegrateur == true){
+            verif = true;
+        }else{
+            verif = false;
+        }
+        return verif;        
+    }
+    public void placerDesintegrateur(){
+        avoirDesintegrateur = true;
+    }
+    public void supprimerDesintegrateur(){
+        avoirDesintegrateur = false;
+    }
+    
+    
 }
