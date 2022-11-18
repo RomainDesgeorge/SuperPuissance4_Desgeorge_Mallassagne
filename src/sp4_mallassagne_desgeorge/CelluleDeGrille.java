@@ -68,7 +68,7 @@ public class CelluleDeGrille {
         jetonCourant = null;
     }
     public boolean presenceDesintegrateur(){
-        boolean verif = false;
+        boolean verif;
         if (avoirDesintegrateur == true){
             verif = true;
         }else{
@@ -82,6 +82,9 @@ public class CelluleDeGrille {
     public void supprimerDesintegrateur(){
         avoirDesintegrateur = false;
     }
-    
+    public void activerTrouNoir(){
+        supprimerJeton();
+        supprimerTrouNoir();
+    }
     
 }
