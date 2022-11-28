@@ -127,16 +127,20 @@ public class PlateauDeJeu {
                         verif = true;
                         break;
                     }
+                }
             }
+        
         }
-        return verif;
     }
+        return verif;
+}
 
     /**
      *
      * @param couleur
      * @return
      */
+    
     public boolean diagonaleDescendanteGagnantePourCouleur(String couleur){
         boolean verif = false;
         int win = 0;
@@ -166,11 +170,22 @@ public class PlateauDeJeu {
                         verif = true;
                         break;
                     }
+                }
+            }
+        
+        } 
+    }
+
+    return verif;
+    }
+    public void tasserLigne(int ligne){
+        for (int i=0;i<5;i++){
+            if (grille[i][ligne]==null){
+                if (grille[i+1][ligne] != null){
+                    grille[i][ligne] = grille[i+1][ligne];
+                    grille[i+1][ligne] = null;
+                }
             }
         }
-        return verif;
-    } 
+    }
 }
-
-
-
