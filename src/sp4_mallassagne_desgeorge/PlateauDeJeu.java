@@ -211,6 +211,14 @@ public class PlateauDeJeu {
         grille[x][y].placerDesintegrateur();        
     }
     
+    public void presenceDesintegrateur(int x, int y){
+        grille[x][y].presenceDesintegrateur();        
+    }
+    
+    public void presenceTrouNoir(int x, int y){
+        grille[x][y].presenceTrouNoir();        
+    }
+    
     public void supprimerJeton(int x, int y){
         grille[x][y].supprimerJeton();        
     }
