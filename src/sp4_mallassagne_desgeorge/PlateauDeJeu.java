@@ -57,21 +57,120 @@ public class PlateauDeJeu {
     public boolean ligneGagnantePourCouleur(String couleur){
         boolean verif = false;
         int win = 0;
-        int verif1 = 0;
         for (int i = 0;i<6;i++){
-            for(int j = 0; j<7;j++){
-                if (verif1 == 0){
+            for(int j = 0; j<4;j++){
                     if (grille[i][j].lireCouleurDuJeton()== couleur){
-                        win+=1;
-                    }else{
-                        verif1 = 1;
+                        if (grille[i][j+1].lireCouleurDuJeton()== couleur){
+                            if (grille[i][j+2].lireCouleurDuJeton()== couleur){
+                                if (grille[i][j+3].lireCouleurDuJeton()== couleur){
+                                   win = 1; 
+                                }
+                            }
+                        }
                     }
-
-                }
+                    if (win == 1){
+                        verif = true;
+                        break;
+                    }
             }
         }
         return verif;
     }
+    public boolean colonneGagnantePourCouleur(String couleur){
+        boolean verif = false;
+        int win = 0;
+        for (int i = 0;i<3;i++){
+            for(int j = 0; j<7;j++){
+                    if (grille[i][j].lireCouleurDuJeton()== couleur){
+                        if (grille[i+1][j].lireCouleurDuJeton()== couleur){
+                            if (grille[i+2][j].lireCouleurDuJeton()== couleur){
+                                if (grille[i+2][j].lireCouleurDuJeton()== couleur){
+                                   win = 1; 
+                                }
+                            }
+                        }
+                    }
+                    if (win == 1){
+                        verif = true;
+                        break;
+                    }
+            }
+        }
+        return verif;
+    }
+    public boolean diagonaleMontanteGagnantePourCouleur(String couleur){
+        boolean verif = false;
+        int win = 0;
+        for (int i = 0;i<3;i++){
+            for(int j = 0; j<4;j++){
+                    if (grille[i][j].lireCouleurDuJeton()== couleur){
+                        if (grille[i+1][j+1].lireCouleurDuJeton()== couleur){
+                            if (grille[i+2][j+2].lireCouleurDuJeton()== couleur){
+                                if (grille[i+3][j+3].lireCouleurDuJeton()== couleur){
+                                   win = 1; 
+                                }
+                            }
+                        }
+                    }
+        for (int a = 0;a<3;a++){
+            for(int b = 3; b<7;b++){
+                    if (grille[a][b].lireCouleurDuJeton()== couleur){
+                        if (grille[a+1][b-1].lireCouleurDuJeton()== couleur){
+                            if (grille[a+2][b-2].lireCouleurDuJeton()== couleur){
+                                if (grille[a+3][b-3].lireCouleurDuJeton()== couleur){
+                                   win = 1; 
+                                }
+                            }
+                        }
+                    }
+                    if (win == 1){
+                        verif = true;
+                        break;
+                    }
+            }
+        }
+        return verif;
+    }
+
+    /**
+     *
+     * @param couleur
+     * @return
+     */
+    public boolean diagonaleDescendanteGagnantePourCouleur(String couleur){
+        boolean verif = false;
+        int win = 0;
+        for (int i = 3;i<6;i++){
+            for(int j = 0; j<4;j++){
+                    if (grille[i][j].lireCouleurDuJeton()== couleur){
+                        if (grille[i-1][j+1].lireCouleurDuJeton()== couleur){
+                            if (grille[i-2][j+2].lireCouleurDuJeton()== couleur){
+                                if (grille[i-3][j+3].lireCouleurDuJeton()== couleur){
+                                   win = 1; 
+                                }
+                            }
+                        }
+                    }
+        for (int a = 3;a<6;a++){
+            for(int b = 3; b<7;b++){
+                    if (grille[a][b].lireCouleurDuJeton()== couleur){
+                        if (grille[a-1][b-1].lireCouleurDuJeton()== couleur){
+                            if (grille[a-2][b-2].lireCouleurDuJeton()== couleur){
+                                if (grille[a-3][b-3].lireCouleurDuJeton()== couleur){
+                                   win = 1; 
+                                }
+                            }
+                        }
+                    }
+                    if (win == 1){
+                        verif = true;
+                        break;
+                    }
+            }
+        }
+        return verif;
+    } 
 }
+
 
 
