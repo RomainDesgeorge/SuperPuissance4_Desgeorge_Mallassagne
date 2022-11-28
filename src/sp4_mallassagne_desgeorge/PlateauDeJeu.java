@@ -84,7 +84,7 @@ public class PlateauDeJeu {
                     if (grille[j][i].lireCouleurDuJeton().equals(couleur)){
                         if (grille[j+1][i].lireCouleurDuJeton().equals(couleur)){
                             if (grille[j+2][i].lireCouleurDuJeton().equals(couleur)){
-                                if (grille[j+2][i].lireCouleurDuJeton().equals(couleur)){
+                                if (grille[j+3][i].lireCouleurDuJeton().equals(couleur)){
                                    win = 1; 
                                 }
                             }
@@ -226,11 +226,24 @@ public class PlateauDeJeu {
                 if(grille[i][j].presenceJeton() == true){
                     couleur = lireCouleurDuJeton(i,j);
                     jeton = grille[i][j].recupererJeton();
-                    if(joueur1.getCouleur()== couleur){
+                    if(joueur1.getCouleur().equals(couleur)){
                         joueur1.ajouterJeton(jeton);
                     }else{
                         joueur2.ajouterJeton(jeton);
                     }
+                }
+            }
+        }
+    }
+    public void afficherGrilleSurConsole(){
+        for(int i=0;i<7;i++){
+            for(int j=0;j<6;j++){
+                if(grille[i][j].presenceJeton() == true){
+                    System.out.println("["+grille[i][j].lireCouleurDuJeton()+"]");
+                }else{
+                    System.out.println("["+null+"]");
+                }if(j==6){
+                    System.out.println("\n");
                 }
             }
         }
