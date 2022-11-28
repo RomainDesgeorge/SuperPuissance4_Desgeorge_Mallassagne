@@ -211,12 +211,20 @@ public class PlateauDeJeu {
         grille[x][y].placerDesintegrateur();        
     }
     
-    public void presenceDesintegrateur(int x, int y){
-        grille[x][y].presenceDesintegrateur();        
+    public boolean presenceDesintegrateur(int x, int y){
+        boolean verif1=false;
+        if(grille[x][y].presenceDesintegrateur()==true){
+            verif1 = true;
+        }
+        return verif1;        
     }
     
-    public void presenceTrouNoir(int x, int y){
-        grille[x][y].presenceTrouNoir();        
+    public boolean presenceTrouNoir(int x, int y){
+        boolean verif1=false;
+        if(grille[x][y].presenceTrouNoir()==true){
+            verif1 = true;
+        }
+        return verif1;        
     }
     
     public void supprimerJeton(int x, int y){
