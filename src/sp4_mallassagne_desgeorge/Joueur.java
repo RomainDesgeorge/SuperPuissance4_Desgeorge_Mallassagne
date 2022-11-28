@@ -32,11 +32,11 @@ public class Joueur {
      * @return
      */
     public void affecterCouleur(String Couleur){
-        Couleur=Couleur;
+        couleur=Couleur;
     }
 
     /**
-     *recupère la resèrve de jetons
+     *recupère la reserve de jetons
      * @return
      */
     public ArrayList<Jeton> getReserveJetons() {

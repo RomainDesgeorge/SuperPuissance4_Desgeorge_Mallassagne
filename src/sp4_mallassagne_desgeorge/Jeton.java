@@ -6,18 +6,24 @@ package sp4_mallassagne_desgeorge;
 
 /**
  *
- * @author rom
+ * @author Alexis Mallassagne et Romain Desgeorgessss
  */
 public class Jeton {
     private String couleur;
     public Jeton (String Couleur){
         couleur=Couleur;
     }
-
-    public String getCouleur() {
+    /**
+    * Permet de lire la couleur du jeton
+    * @return la couleur de jeton
+    */
+    public String lireCouleur() {
         return couleur;
     }
-
+/**
+ * Affiche R si la couleur du jeton est rouge et affiche J si la couleur du jeton est jaune
+ * @return 
+ */
     @Override
     public String toString() {
         String color;
