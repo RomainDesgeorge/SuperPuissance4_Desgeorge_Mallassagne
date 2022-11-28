@@ -218,6 +218,22 @@ public class PlateauDeJeu {
     public void recupererJeton(int x, int y){
         grille[x][y].recupererJeton();        
     }
-    
+    public void viderGrille(Joueur joueur1, Joueur joueur2){
+    String couleur;
+    Jeton jeton;
+        for(int i=0;i<7;i++){
+            for(int j=0;j<6;j++){
+                if(grille[i][j].presenceJeton() == true){
+                    couleur = lireCouleurDuJeton(i,j);
+                    jeton = grille[i][j].recupererJeton();
+                    if(joueur1.getCouleur()== couleur){
+                        joueur1.ajouterJeton(jeton);
+                    }else{
+                        joueur2.ajouterJeton(jeton);
+                    }
+                }
+            }
+        }
+    }
     
 }
