@@ -59,10 +59,10 @@ public class PlateauDeJeu {
         int win = 0;
         for (int i = 0;i<6;i++){
             for(int j = 0; j<4;j++){
-                    if (grille[i][j].lireCouleurDuJeton()== couleur){
-                        if (grille[i][j+1].lireCouleurDuJeton()== couleur){
-                            if (grille[i][j+2].lireCouleurDuJeton()== couleur){
-                                if (grille[i][j+3].lireCouleurDuJeton()== couleur){
+                    if (grille[i][j].lireCouleurDuJeton().equals(couleur)){
+                        if (grille[i][j+1].lireCouleurDuJeton().equals(couleur)){
+                            if (grille[i][j+2].lireCouleurDuJeton().equals(couleur)){
+                                if (grille[i][j+3].lireCouleurDuJeton().equals(couleur)){
                                    win = 1; 
                                 }
                             }
@@ -81,10 +81,10 @@ public class PlateauDeJeu {
         int win = 0;
         for (int i = 0;i<3;i++){
             for(int j = 0; j<7;j++){
-                    if (grille[i][j].lireCouleurDuJeton()== couleur){
-                        if (grille[i+1][j].lireCouleurDuJeton()== couleur){
-                            if (grille[i+2][j].lireCouleurDuJeton()== couleur){
-                                if (grille[i+2][j].lireCouleurDuJeton()== couleur){
+                    if (grille[i][j].lireCouleurDuJeton().equals(couleur)){
+                        if (grille[i+1][j].lireCouleurDuJeton().equals(couleur)){
+                            if (grille[i+2][j].lireCouleurDuJeton().equals(couleur)){
+                                if (grille[i+2][j].lireCouleurDuJeton().equals(couleur)){
                                    win = 1; 
                                 }
                             }
@@ -103,10 +103,10 @@ public class PlateauDeJeu {
         int win = 0;
         for (int i = 0;i<3;i++){
             for(int j = 0; j<4;j++){
-                    if (grille[i][j].lireCouleurDuJeton()== couleur){
-                        if (grille[i+1][j+1].lireCouleurDuJeton()== couleur){
-                            if (grille[i+2][j+2].lireCouleurDuJeton()== couleur){
-                                if (grille[i+3][j+3].lireCouleurDuJeton()== couleur){
+                    if (grille[i][j].lireCouleurDuJeton().equals(couleur)){
+                        if (grille[i+1][j+1].lireCouleurDuJeton().equals(couleur)){
+                            if (grille[i+2][j+2].lireCouleurDuJeton().equals(couleur)){
+                                if (grille[i+3][j+3].lireCouleurDuJeton().equals(couleur)){
                                    win = 1; 
                                 }
                             }
@@ -114,10 +114,10 @@ public class PlateauDeJeu {
                     }
         for (int a = 0;a<3;a++){
             for(int b = 3; b<7;b++){
-                    if (grille[a][b].lireCouleurDuJeton()== couleur){
-                        if (grille[a+1][b-1].lireCouleurDuJeton()== couleur){
-                            if (grille[a+2][b-2].lireCouleurDuJeton()== couleur){
-                                if (grille[a+3][b-3].lireCouleurDuJeton()== couleur){
+                    if (grille[a][b].lireCouleurDuJeton().equals(couleur)){
+                        if (grille[a+1][b-1].lireCouleurDuJeton().equals(couleur)){
+                            if (grille[a+2][b-2].lireCouleurDuJeton().equals(couleur)){
+                                if (grille[a+3][b-3].lireCouleurDuJeton().equals(couleur)){
                                    win = 1; 
                                 }
                             }
@@ -142,10 +142,10 @@ public class PlateauDeJeu {
         int win = 0;
         for (int i = 3;i<6;i++){
             for(int j = 0; j<4;j++){
-                    if (grille[i][j].lireCouleurDuJeton()== couleur){
-                        if (grille[i-1][j+1].lireCouleurDuJeton()== couleur){
-                            if (grille[i-2][j+2].lireCouleurDuJeton()== couleur){
-                                if (grille[i-3][j+3].lireCouleurDuJeton()== couleur){
+                    if (grille[i][j].lireCouleurDuJeton().equals(couleur)){
+                        if (grille[i-1][j+1].lireCouleurDuJeton().equals(couleur)){
+                            if (grille[i-2][j+2].lireCouleurDuJeton().equals(couleur)){
+                                if (grille[i-3][j+3].lireCouleurDuJeton().equals(couleur)){
                                    win = 1; 
                                 }
                             }
@@ -153,10 +153,10 @@ public class PlateauDeJeu {
                     }
         for (int a = 3;a<6;a++){
             for(int b = 3; b<7;b++){
-                    if (grille[a][b].lireCouleurDuJeton()== couleur){
-                        if (grille[a-1][b-1].lireCouleurDuJeton()== couleur){
-                            if (grille[a-2][b-2].lireCouleurDuJeton()== couleur){
-                                if (grille[a-3][b-3].lireCouleurDuJeton()== couleur){
+                    if (grille[a][b].lireCouleurDuJeton().equals(couleur)){
+                        if (grille[a-1][b-1].lireCouleurDuJeton().equals(couleur)){
+                            if (grille[a-2][b-2].lireCouleurDuJeton().equals(couleur)){
+                                if (grille[a-3][b-3].lireCouleurDuJeton().equals(couleur)){
                                    win = 1; 
                                 }
                             }
