@@ -4,6 +4,7 @@ package sp4_mallassagne_desgeorge;
 import sp4_mallassagne_desgeorge.Jeton;
 import sp4_mallassagne_desgeorge.Joueur;
 import sp4_mallassagne_desgeorge.PlateauDeJeu;
+import sp4_mallassagne_desgeorge.CelluleDeGrille;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -20,7 +21,7 @@ public class Partie {
     private PlateauDeJeu plateau;
 
     /**
-     *
+     *Constructeur Partie
      * @param joueur1
      * @param joueur2
      */
@@ -53,5 +54,50 @@ public class Partie {
             }
             
         }
+    }
+    public void placerTrousNoirsEtDesintegrateurs(){
+        int i=0;
+        while (i<3){
+            int x=(int) (Math.random() * (9-3));
+            int y=(int) (Math.random() * (8-3));
+            if (plateau.presenceDesintegrateur(x,y)==false){
+                if (plateau.presenceTrouNoir(x,y)==false){
+                    plateau.placerTrouNoir(x,y);
+                    plateau.placerDesintegrateur(x,y);
+                    i+=1;
+                }
+            }
+                
+        }
+        while (i<5){
+            int x=(int) (Math.random() * (9-3));
+            int y=(int) (Math.random() * (8-3));
+            if (plateau.presenceDesintegrateur(x,y)==false){
+                if (plateau.presenceTrouNoir(x,y)==false){
+                    plateau.placerTrouNoir(x,y);
+                    i+=1;
+                }
+            }
+        }
+        while(i<7){
+            int x=(int) (Math.random() * (9-3));
+            int y=(int) (Math.random() * (8-3));
+            if (plateau.presenceDesintegrateur(x,y)==false){
+                if (plateau.presenceTrouNoir(x,y)==false){
+                    plateau.placerDesintegrateur(x,y);
+                    i+=1;
+                }
+            }
+        }
+    }
+    public void initialiserPartie(){
+        attribuerCouleurAuxJoueurs();
+        creerEtAffecterJeton(listeJoueurs[1]);
+        creerEtAffecterJeton(listeJoueurs[0]);
+        placerTrousNoirsEtDesintegrateurs();
+    }
+    
+    public void lancerPartie(){
+        initialiserPartie();
     }
 }
