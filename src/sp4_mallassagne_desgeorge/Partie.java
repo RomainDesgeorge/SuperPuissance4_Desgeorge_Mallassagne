@@ -165,6 +165,10 @@ public class Partie {
                 if (choix == 3){
                     int cln=10;
                     int lgn=10;
+                    if (joueurCourant.getNombreDesintegrateurs()==0){
+                        System.out.println("Le joueur n'a pas de désintegrateurs");
+                        continue;
+                    }
                     Scanner colonne = new Scanner (System.in);
                     Scanner ligne = new Scanner (System.in);
                     while (cln>7){
@@ -175,7 +179,7 @@ public class Partie {
                         System.out.println("Dans quelle ligne voulez vous placer votre jeton");
                         lgn = ligne.nextInt();
                     }
-                    plateau.placerDesintegrateur(lgn-1, cln-1);
+                    plateau.utiliserDesintegrateur(lgn-1, cln-1,joueurCourant);
                     n +=1;
                 }               
             }
@@ -214,6 +218,10 @@ public class Partie {
                 if (choix == 3){
                     int cln=10;
                     int lgn=10;
+                    if (joueurCourant.getNombreDesintegrateurs()==0){
+                        System.out.println("Le joueur n'a pas de désintegrateurs");
+                        continue;
+                    }
                     Scanner colonne = new Scanner (System.in);
                     Scanner ligne = new Scanner (System.in);
                     while (cln>7){
@@ -224,7 +232,7 @@ public class Partie {
                         System.out.println("Dans quelle ligne voulez vous utiliser votre desintegrateur");
                         lgn = ligne.nextInt();
                     }
-                    plateau.placerDesintegrateur(lgn-1, cln-1);
+                    plateau.utiliserDesintegrateur(lgn-1, cln-1,joueurCourant);
                     n +=1;
                 }               
                 
