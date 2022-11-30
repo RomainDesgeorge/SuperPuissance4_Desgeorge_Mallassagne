@@ -68,6 +68,13 @@ public class Partie {
             }
             
         }
+        if ("jaune".equals(j1.getCouleur())){
+            for (int i=0;i<31;i++){
+                Jeton jeton=new Jeton ("jaune");
+                j1.ajouterJeton(jeton);
+            }
+            
+        }
     }
 
     /**Place les trous noir et les desintegrateurs dans la disposition voulue
