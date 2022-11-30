@@ -130,6 +130,7 @@ public class Partie {
         int n=0;
         joueurCourant = listeJoueurs[0];
         while(plateau.etreGagnantePourCouleur(joueurCourant.getCouleur()) == false){
+            plateau.afficherGrilleSurConsole();
             if (n%2 == 0){
                 joueurCourant = listeJoueurs[0];
                 System.out.println("Que voulez vous faire, si vous voulez jouer un jeton tapez '1', si vous voulez récupérer un jeton, tapez '2' et si vous voulez utiliser un désintegrateur, tapez'3'");
@@ -190,6 +191,7 @@ public class Partie {
                     n +=1;
                 }               
             }
+            plateau.afficherGrilleSurConsole();
             if (n%2 == 1){
                 joueurCourant = listeJoueurs[1];
                 System.out.println("Que voulez vous faire, si vous voulez jouer un jeton tapez '1', si vous voulez récupérer un jeton, tapez '2' et si vous voulez utiliser un désintegrateur, tapez'3'");
