@@ -21,13 +21,13 @@ public class PlateauDeJeu {
     public int ajouterJetonDansColonne(Jeton jeton, int nb){
         int nbligne = 0;
         for(int i=0;i<5;i++){
-            if (grille[nb][i] != null){
+            if (grille[nb][i].lireCouleurDuJeton() != "rien"){
                 nbligne += 1;
             }else{
                 break;
-            }
-        grille[nb][nbligne].affecterJeton(jeton);   
+            }   
         }
+        grille[nb][nbligne].affecterJeton(jeton);
         return nbligne;
     }    
     public boolean grilleRemplie(){
@@ -273,15 +273,30 @@ public class PlateauDeJeu {
         }
     }
     public void afficherGrilleSurConsole(){
-        for(int i=0;i<7;i++){
-            for(int j=0;j<6;j++){
+        for(int j=5;j>-1;j--){
+            for(int i=0;i<7;i++){
                 if(grille[i][j].presenceJeton() == true){
-                    System.out.println("["+grille[i][j].lireCouleurDuJeton()+"]");
-                }else{
-                    System.out.println("["+null+"]");
-                }if(j==6){
-                    System.out.println("\n");
+                    System.out.print("["+grille[i][j].lireCouleurDuJeton()+"]");
                 }
+                else{
+                    if (grille[i][j].presenceDesintegrateur()== true && grille[i][j].presenceTrouNoir()== true){                        
+                            System.out.print("[ @@ ]");
+                    }
+                    if (grille[i][j].presenceDesintegrateur()== false && grille[i][j].presenceTrouNoir()== true){
+                        System.out.print("[ @@ ]");
+                    }
+                    if (grille[i][j].presenceDesintegrateur()== true && grille[i][j].presenceTrouNoir()== false){
+                        System.out.print("[ OO ]");
+                    }
+                    if (grille[i][j].presenceDesintegrateur()== false && grille[i][j].presenceTrouNoir()== false){
+                        System.out.print("["+null+"]");
+                    }
+                
+                }
+
+                if(i==6){
+                    System.out.println("\n"); 
+                }    
             }
         }
     }
