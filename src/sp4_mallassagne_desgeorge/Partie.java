@@ -29,7 +29,7 @@ public class Partie {
     public Partie (Joueur joueur1,Joueur joueur2){
         listeJoueurs[0]=joueur1;
         listeJoueurs[1]=joueur2;
-        plateau=plateau;
+        plateau=new PlateauDeJeu();
     }
 
     /**Recupere la liste des joueurs
@@ -127,8 +127,9 @@ public class Partie {
     }
     
     public void lancerPartie(){
+        int n=0;
+        joueurCourant = listeJoueurs[0];
         while(plateau.etreGagnantePourCouleur(joueurCourant.getCouleur()) == false){
-            int n=0;
             if (n%2 == 0){
                 joueurCourant = listeJoueurs[0];
                 System.out.println("Que voulez vous faire, si vous voulez jouer un jeton tapez '1', si vous voulez récupérer un jeton, tapez '2' et si vous voulez utiliser un désintegrateur, tapez'3'");

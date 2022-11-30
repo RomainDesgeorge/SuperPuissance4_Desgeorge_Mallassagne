@@ -11,7 +11,7 @@ package sp4_mallassagne_desgeorge;
 public class PlateauDeJeu {
     CelluleDeGrille[][] grille = new CelluleDeGrille [7][6];
  
-    public void PlateauDeJeu(){
+    public  PlateauDeJeu(){
         for (int i=0;i<6;i++){
             for (int j=0; j<7;j++){
                 grille[j][i] = new CelluleDeGrille();
@@ -20,7 +20,7 @@ public class PlateauDeJeu {
     }
     public void ajouterJetonDansColonne(Jeton jeton, int nb){
         int nbligne = 0;
-        for(int i=0;i<7;i++){
+        for(int i=0;i<5;i++){
             if (grille[nb][i] != null){
                 nbligne += 1;
             }else{
@@ -57,8 +57,8 @@ public class PlateauDeJeu {
     public boolean ligneGagnantePourCouleur(String couleur){
         boolean verif = false;
         int win = 0;
-        for (int i = 0;i<6;i++){
-            for(int j = 0; j<4;j++){
+        for (int i = 0;i<3;i++){
+            for(int j = 0; j<7;j++){
                     if (grille[j][i].lireCouleurDuJeton().equals(couleur)){
                         if (grille[j][i+1].lireCouleurDuJeton().equals(couleur)){
                             if (grille[j][i+2].lireCouleurDuJeton().equals(couleur)){
@@ -79,8 +79,8 @@ public class PlateauDeJeu {
     public boolean colonneGagnantePourCouleur(String couleur){
         boolean verif = false;
         int win = 0;
-        for (int i = 0;i<3;i++){
-            for(int j = 0; j<7;j++){
+        for (int i = 0;i<6;i++){
+            for(int j = 0; j<4;j++){
                     if (grille[j][i].lireCouleurDuJeton().equals(couleur)){
                         if (grille[j+1][i].lireCouleurDuJeton().equals(couleur)){
                             if (grille[j+2][i].lireCouleurDuJeton().equals(couleur)){
