@@ -14,7 +14,7 @@ import sp4_mallassagne_desgeorge.CelluleDeGrille;
 
 /**
  *
- * @author xelat
+ * @author Alexis Mallassagne et Romain Desgeorge
  */
 public class Partie {
     private Joueur[] listeJoueurs=new Joueur[2];
@@ -29,14 +29,22 @@ public class Partie {
     public Partie (Joueur joueur1,Joueur joueur2){
         listeJoueurs[0]=joueur1;
         listeJoueurs[1]=joueur2;
+        plateau=plateau;
     }
 
+    /**Recupere la liste des joueurs
+     *
+     * @return
+     */
     public Joueur[] getListeJoueurs() {
         return listeJoueurs;
     }
     
+    /**Affecte une couleur aux joueurs aléatoirement
+     *
+     */
     public void attribuerCouleurAuxJoueurs(){
-        int valeur=(int) (Math.random() * (5-3));
+        int valeur=(int) (Math.random() * (2));
         if (valeur==0){
             listeJoueurs[0].affecterCouleur("rouge");
             listeJoueurs[1].affecterCouleur("jaune");
@@ -47,8 +55,13 @@ public class Partie {
         }
         
     }
+
+    /**Crée 30 jetons puis les insere dans le tableau reserve jetons du joueur
+     *
+     * @param j1
+     */
     public void creerEtAffecterJeton(Joueur j1){
-        if (j1.getCouleur()=="rouge"){
+        if ("rouge".equals(j1.getCouleur())){
             for (int i=0;i<31;i++){
                 Jeton jeton=new Jeton ("rouge");
                 j1.ajouterJeton(jeton);
@@ -56,6 +69,10 @@ public class Partie {
             
         }
     }
+
+    /**Place les trous noir et les desintegrateurs dans la disposition voulue
+     *
+     */
     public void placerTrousNoirsEtDesintegrateurs(){
         int i=0;
         while (i<3){
@@ -91,6 +108,10 @@ public class Partie {
             }
         }
     }
+
+    /**Initialisation de la partie
+     *
+     */
     public void initialiserPartie(){
         attribuerCouleurAuxJoueurs();
         creerEtAffecterJeton(listeJoueurs[1]);

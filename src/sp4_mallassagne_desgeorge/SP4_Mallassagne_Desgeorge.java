@@ -7,7 +7,7 @@ package sp4_mallassagne_desgeorge;
 
 /**
  *
- * @author Alexis Mallassagne et Romain Desgeorgessss
+ * @author Alexis Mallassagne et Romain Desgeorge
  */
 public class SP4_Mallassagne_Desgeorge {
 
