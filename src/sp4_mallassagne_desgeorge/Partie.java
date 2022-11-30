@@ -133,7 +133,11 @@ public class Partie {
                     plateau.ajouterJetonDansColonne(joueurCourant.jouerJeton(), cln);                    
                 }
                 if (choix == 2){
-                    
+                    Scanner colonne = new Scanner (System.in);
+                    Scanner ligne = new Scanner (System.in);
+                    int cln = colonne.nextInt();
+                    int lgn = colonne.nextInt();
+                    plateau.recupererJeton(lgn, cln);
                 }
             }
             if (n%2 == 1){
