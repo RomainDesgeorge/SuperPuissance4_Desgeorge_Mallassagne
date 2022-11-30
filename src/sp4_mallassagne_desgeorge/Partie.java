@@ -138,7 +138,8 @@ public class Partie {
                     Scanner colonne = new Scanner (System.in);
                     System.out.println("Dans quelle colonne voulez vous placer votre jeton");
                     int cln = colonne.nextInt();
-                    plateau.ajouterJetonDansColonne(joueurCourant.jouerJeton(), cln);                    
+                    plateau.ajouterJetonDansColonne(joueurCourant.jouerJeton(), cln); 
+                    n +=1;
                 }
                 if (choix == 2){
                     Scanner colonne = new Scanner (System.in);
@@ -146,8 +147,9 @@ public class Partie {
                     System.out.println("Dans quelle colonne voulez vous placer votre jeton");
                     int cln = colonne.nextInt();
                     System.out.println("Dans quelle ligne voulez vous placer votre jeton");
-                    int lgn = colonne.nextInt();
+                    int lgn = ligne.nextInt();
                     plateau.recupererJeton(lgn, cln);
+                    n +=1;
                 }
                 if (choix == 3){
                     Scanner colonne = new Scanner (System.in);
@@ -157,9 +159,41 @@ public class Partie {
                     System.out.println("Dans quelle ligne voulez vous placer votre jeton");
                     int lgn = ligne.nextInt();
                     plateau.placerDesintegrateur(lgn, cln);
+                    n +=1;
                 }               
             }
             if (n%2 == 1){
+                joueurCourant = listeJoueurs[1];
+                System.out.println("Que voulez vous faire, si vous voulez jouer un jeton tapez '1', si vous voulez récupérer un jeton, tapez '2' et si vous voulez utiliser un désintegrateur, tapez'3'");
+                Scanner reponse = new Scanner (System.in);
+                int choix = reponse.nextInt();
+                if (choix == 1){
+                    Scanner colonne = new Scanner (System.in);
+                    System.out.println("Dans quelle colonne voulez vous placer votre jeton");
+                    int cln = colonne.nextInt();
+                    plateau.ajouterJetonDansColonne(joueurCourant.jouerJeton(), cln); 
+                    n +=1;
+                }
+                if (choix == 2){
+                    Scanner colonne = new Scanner (System.in);
+                    Scanner ligne = new Scanner (System.in);
+                    System.out.println("Dans quelle colonne voulez vous placer votre jeton");
+                    int cln = colonne.nextInt();
+                    System.out.println("Dans quelle ligne voulez vous placer votre jeton");
+                    int lgn = ligne.nextInt();
+                    plateau.recupererJeton(lgn, cln);
+                    n +=1;
+                }
+                if (choix == 3){
+                    Scanner colonne = new Scanner (System.in);
+                    Scanner ligne = new Scanner (System.in);
+                    System.out.println("Dans quelle colonne voulez vous placer votre jeton");
+                    int cln = colonne.nextInt();
+                    System.out.println("Dans quelle ligne voulez vous placer votre jeton");
+                    int lgn = ligne.nextInt();
+                    plateau.placerDesintegrateur(lgn, cln);
+                    n +=1;
+                } 
                 
             }        
         }
