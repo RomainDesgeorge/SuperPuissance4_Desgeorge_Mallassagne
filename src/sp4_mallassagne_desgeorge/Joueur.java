@@ -8,14 +8,14 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Alexis Mallassagne et Romain Desgeorgesssss
+ * @author Alexis Mallassagne et Romain Desgeorge
  */
 public class Joueur {
     private String nom;
     private ArrayList <Jeton> reserveJetons=new ArrayList<>();
     private String couleur;
     int nombreJetonsRestants=reserveJetons.size();
-    int nombreDesintegrateurs=0;
+    private int nombreDesintegrateurs=0;
     
     /**
      *Constructeur Joueur récupère le Nom du joueur
@@ -26,10 +26,6 @@ public class Joueur {
         nombreDesintegrateurs=0;
     }
 
-    Joueur() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
     /**
      *Prend la couleur du joueur et la retourne
      * @param Couleur
@@ -37,6 +33,10 @@ public class Joueur {
      */
     public void affecterCouleur(String Couleur){
         couleur=Couleur;
+    }
+
+    public int getNombreDesintegrateurs() {
+        return nombreDesintegrateurs;
     }
 
     /**
