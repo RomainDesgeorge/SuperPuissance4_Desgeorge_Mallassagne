@@ -204,7 +204,6 @@ public class Partie {
                         System.out.println("Dans quelle colonne voulez vous placer votre jeton");
                         cln = colonne.nextInt();
                     }
-                    plateau.ajouterJetonDansColonne(joueurCourant.jouerJeton(), cln-1); 
                     int a = plateau.ajouterJetonDansColonne(joueurCourant.jouerJeton(), cln-1);
                     if(plateau.presenceDesintegrateur(a,cln-1) == true){
                         joueurCourant.obtenirDesintegrateur();
