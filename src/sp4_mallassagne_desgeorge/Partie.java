@@ -98,6 +98,15 @@ public class Partie {
     }
     
     public void lancerPartie(){
-        initialiserPartie();
+        while(plateau.etreGagnantePourCouleur(joueurCourant.getCouleur()) == false){
+            int n=0;
+            if (n%2 == 0){
+                
+            }
+            if (n%2 == 1){
+                
+            }        
+        }
     }
+
 }
