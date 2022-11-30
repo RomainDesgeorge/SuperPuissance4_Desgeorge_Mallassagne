@@ -1,6 +1,7 @@
 package sp4_mallassagne_desgeorge;
 
 
+import java.util.Scanner;
 import sp4_mallassagne_desgeorge.Jeton;
 import sp4_mallassagne_desgeorge.Joueur;
 import sp4_mallassagne_desgeorge.PlateauDeJeu;
@@ -101,7 +102,18 @@ public class Partie {
         while(plateau.etreGagnantePourCouleur(joueurCourant.getCouleur()) == false){
             int n=0;
             if (n%2 == 0){
-                
+                joueurCourant = listeJoueurs[0];
+                System.out.println("Que voulez vous faire, si vous voulez jouer un jeton tapez '1', si vous voulez récupérer un jeton, tapez '2' et si vous voulez utiliser un désintegrateur, tapez'3'");
+                Scanner reponse = new Scanner (System.in);
+                int choix = reponse.nextInt();
+                if (choix == 1){
+                    Scanner colonne = new Scanner (System.in);
+                    int cln = colonne.nextInt();
+                    plateau.ajouterJetonDansColonne(joueurCourant.jouerJeton(), cln);                    
+                }
+                if (choix == 2){
+                    
+                }
             }
             if (n%2 == 1){
                 
