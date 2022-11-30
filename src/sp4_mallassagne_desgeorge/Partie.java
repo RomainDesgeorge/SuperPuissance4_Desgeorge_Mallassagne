@@ -13,7 +13,7 @@ import sp4_mallassagne_desgeorge.CelluleDeGrille;
 
 /**
  *
- * @author xelat
+ * @author Alexis Mallassagne et Romain Desgeorge
  */
 public class Partie {
     private Joueur[] listeJoueurs=new Joueur[2];
@@ -28,6 +28,7 @@ public class Partie {
     public Partie (Joueur joueur1,Joueur joueur2){
         listeJoueurs[0]=joueur1;
         listeJoueurs[1]=joueur2;
+        plateau=plateau;
     }
 
     /**Recupere la liste des joueurs
