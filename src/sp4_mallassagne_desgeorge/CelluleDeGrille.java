@@ -53,7 +53,7 @@ public class CelluleDeGrille {
                 couleur = "jaune";
             }
         }else{
-            couleur = null;
+            couleur = "rien";
         }
         return couleur;
     }
