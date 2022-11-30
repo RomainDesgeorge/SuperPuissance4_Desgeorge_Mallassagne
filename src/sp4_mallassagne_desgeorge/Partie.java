@@ -142,7 +142,14 @@ public class Partie {
                         System.out.println("Dans quelle colonne voulez vous placer votre jeton");
                         cln = colonne.nextInt();
                     }
-                    plateau.ajouterJetonDansColonne(joueurCourant.jouerJeton(), cln-1); 
+                    int a = plateau.ajouterJetonDansColonne(joueurCourant.jouerJeton(), cln-1);
+                    if(plateau.presenceDesintegrateur(a,cln-1) == true){
+                        joueurCourant.obtenirDesintegrateur();
+                    }
+                    if(plateau.presenceTrouNoir(a,cln-1) == true){
+                        plateau.supprimerJeton(a, cln-1);
+                        plateau.supprimerTrouNoir(a, cln-1);
+                    }
                     n +=1;
                 }
                 if (choix == 2){
@@ -192,6 +199,14 @@ public class Partie {
                         cln = colonne.nextInt();
                     }
                     plateau.ajouterJetonDansColonne(joueurCourant.jouerJeton(), cln-1); 
+                    int a = plateau.ajouterJetonDansColonne(joueurCourant.jouerJeton(), cln-1);
+                    if(plateau.presenceDesintegrateur(a,cln-1) == true){
+                        joueurCourant.obtenirDesintegrateur();
+                    }
+                    if(plateau.presenceTrouNoir(a,cln-1) == true){
+                        plateau.supprimerJeton(a, cln-1);
+                        plateau.supprimerTrouNoir(a, cln-1);
+                    }
                     n +=1;
                 }
                 if (choix == 2){
