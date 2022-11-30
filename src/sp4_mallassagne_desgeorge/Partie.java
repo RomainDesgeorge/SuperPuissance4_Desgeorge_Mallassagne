@@ -224,7 +224,7 @@ public class Partie {
                     }
                     while (lgn>6){
                         System.out.println("De quelle ligne voulez vous récuprer votre jeton");
-                        lgn = ligne.nextInt();
+                        lgn = ligne.nextInt(); 
                     }
                     
                     plateau.recupererJeton(lgn-1, cln-1);
