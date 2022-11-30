@@ -136,16 +136,28 @@ public class Partie {
                 int choix = reponse.nextInt();
                 if (choix == 1){
                     Scanner colonne = new Scanner (System.in);
+                    System.out.println("Dans quelle colonne voulez vous placer votre jeton");
                     int cln = colonne.nextInt();
                     plateau.ajouterJetonDansColonne(joueurCourant.jouerJeton(), cln);                    
                 }
                 if (choix == 2){
                     Scanner colonne = new Scanner (System.in);
                     Scanner ligne = new Scanner (System.in);
+                    System.out.println("Dans quelle colonne voulez vous placer votre jeton");
                     int cln = colonne.nextInt();
+                    System.out.println("Dans quelle ligne voulez vous placer votre jeton");
                     int lgn = colonne.nextInt();
                     plateau.recupererJeton(lgn, cln);
                 }
+                if (choix == 3){
+                    Scanner colonne = new Scanner (System.in);
+                    Scanner ligne = new Scanner (System.in);
+                    System.out.println("Dans quelle colonne voulez vous placer votre jeton");
+                    int cln = colonne.nextInt();
+                    System.out.println("Dans quelle ligne voulez vous placer votre jeton");
+                    int lgn = ligne.nextInt();
+                    plateau.placerDesintegrateur(lgn, cln);
+                }               
             }
             if (n%2 == 1){
                 
