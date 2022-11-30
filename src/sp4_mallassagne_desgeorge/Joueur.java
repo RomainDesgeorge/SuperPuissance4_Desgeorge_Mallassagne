@@ -26,6 +26,10 @@ public class Joueur {
         nombreDesintegrateurs=0;
     }
 
+    Joueur() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     /**
      *Prend la couleur du joueur et la retourne
      * @param Couleur

@@ -178,6 +178,21 @@ public class PlateauDeJeu {
 
     return verif;
     }
+    
+    public boolean etreGagnantePourCouleur(String couleur){
+        boolean verif;
+        verif = ligneGagnantePourCouleur(couleur);
+        if(verif = false){
+            verif = colonneGagnantePourCouleur(couleur);
+            if(verif = false){
+                verif = diagonaleDescendanteGagnantePourCouleur(couleur);
+                if (verif = false){
+                    verif = diagonaleMontanteGagnantePourCouleur(couleur);
+                }
+            }
+        }
+        return verif;
+    }
     public void tasserLigne(int ligne){
         for (int i=0;i<5;i++){
             if (grille[ligne][i]==null){
