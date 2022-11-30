@@ -18,7 +18,7 @@ public class PlateauDeJeu {
             }
         }
     }
-    public void ajouterJetonDansColonne(Jeton jeton, int nb){
+    public int ajouterJetonDansColonne(Jeton jeton, int nb){
         int nbligne = 0;
         for(int i=0;i<5;i++){
             if (grille[nb][i] != null){
@@ -28,7 +28,7 @@ public class PlateauDeJeu {
             }
         grille[nb][nbligne].affecterJeton(jeton);   
         }
-
+        return nbligne;
     }    
     public boolean grilleRemplie(){
         boolean verif = true;
@@ -250,6 +250,7 @@ public class PlateauDeJeu {
     public void supprimerJeton(int x, int y){
         grille[x][y].supprimerJeton();        
     }
+    
     
     public void recupererJeton(int x, int y){
         grille[x][y].recupererJeton();        
