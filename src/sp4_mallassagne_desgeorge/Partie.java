@@ -136,30 +136,46 @@ public class Partie {
                 Scanner reponse = new Scanner (System.in);
                 int choix = reponse.nextInt();
                 if (choix == 1){
+                    int cln=10;
                     Scanner colonne = new Scanner (System.in);
-                    System.out.println("Dans quelle colonne voulez vous placer votre jeton");
-                    int cln = colonne.nextInt();
-                    plateau.ajouterJetonDansColonne(joueurCourant.jouerJeton(), cln); 
+                    while (cln>7){
+                        System.out.println("Dans quelle colonne voulez vous placer votre jeton");
+                        cln = colonne.nextInt();
+                    }
+                    plateau.ajouterJetonDansColonne(joueurCourant.jouerJeton(), cln-1); 
                     n +=1;
                 }
                 if (choix == 2){
+                    int cln=10;
+                    int lgn=10;
                     Scanner colonne = new Scanner (System.in);
                     Scanner ligne = new Scanner (System.in);
-                    System.out.println("Dans quelle colonne voulez vous placer votre jeton");
-                    int cln = colonne.nextInt();
-                    System.out.println("Dans quelle ligne voulez vous placer votre jeton");
-                    int lgn = ligne.nextInt();
-                    plateau.recupererJeton(lgn, cln);
+                    while (cln>7){
+                        System.out.println("De quelle colonne voulez vous récupérer votre jeton");
+                        cln = colonne.nextInt();
+                    }
+                    while (lgn>6){
+                        System.out.println("De quelle ligne voulez vous récuprer votre jeton");
+                        lgn = ligne.nextInt();
+                    }
+                    
+                    plateau.recupererJeton(lgn-1, cln-1);
                     n +=1;
                 }
                 if (choix == 3){
+                    int cln=10;
+                    int lgn=10;
                     Scanner colonne = new Scanner (System.in);
                     Scanner ligne = new Scanner (System.in);
-                    System.out.println("Dans quelle colonne voulez vous placer votre jeton");
-                    int cln = colonne.nextInt();
-                    System.out.println("Dans quelle ligne voulez vous placer votre jeton");
-                    int lgn = ligne.nextInt();
-                    plateau.placerDesintegrateur(lgn, cln);
+                    while (cln>7){
+                        System.out.println("Dans quelle colonne voulez vous placer votre jeton");
+                        cln = colonne.nextInt();
+                    }
+                    while (lgn>6){
+                        System.out.println("Dans quelle ligne voulez vous placer votre jeton");
+                        lgn = ligne.nextInt();
+                    }
+                    plateau.placerDesintegrateur(lgn-1, cln-1);
                     n +=1;
                 }               
             }
@@ -169,32 +185,48 @@ public class Partie {
                 Scanner reponse = new Scanner (System.in);
                 int choix = reponse.nextInt();
                 if (choix == 1){
+                    int cln=10;
                     Scanner colonne = new Scanner (System.in);
-                    System.out.println("Dans quelle colonne voulez vous placer votre jeton");
-                    int cln = colonne.nextInt();
-                    plateau.ajouterJetonDansColonne(joueurCourant.jouerJeton(), cln); 
+                    while (cln>7){
+                        System.out.println("Dans quelle colonne voulez vous placer votre jeton");
+                        cln = colonne.nextInt();
+                    }
+                    plateau.ajouterJetonDansColonne(joueurCourant.jouerJeton(), cln-1); 
                     n +=1;
                 }
                 if (choix == 2){
+                    int cln=10;
+                    int lgn=10;
                     Scanner colonne = new Scanner (System.in);
                     Scanner ligne = new Scanner (System.in);
-                    System.out.println("Dans quelle colonne voulez vous placer votre jeton");
-                    int cln = colonne.nextInt();
-                    System.out.println("Dans quelle ligne voulez vous placer votre jeton");
-                    int lgn = ligne.nextInt();
-                    plateau.recupererJeton(lgn, cln);
+                    while (cln>7){
+                        System.out.println("De quelle colonne voulez vous récupérer votre jeton");
+                        cln = colonne.nextInt();
+                    }
+                    while (lgn>6){
+                        System.out.println("De quelle ligne voulez vous récuprer votre jeton");
+                        lgn = ligne.nextInt();
+                    }
+                    
+                    plateau.recupererJeton(lgn-1, cln-1);
                     n +=1;
                 }
                 if (choix == 3){
+                    int cln=10;
+                    int lgn=10;
                     Scanner colonne = new Scanner (System.in);
                     Scanner ligne = new Scanner (System.in);
-                    System.out.println("Dans quelle colonne voulez vous placer votre jeton");
-                    int cln = colonne.nextInt();
-                    System.out.println("Dans quelle ligne voulez vous placer votre jeton");
-                    int lgn = ligne.nextInt();
-                    plateau.placerDesintegrateur(lgn, cln);
+                    while (cln>7){
+                        System.out.println("Dans quelle colonne voulez vous utiliser votre desintegrateur");
+                        cln = colonne.nextInt();
+                    }
+                    while (lgn>6){
+                        System.out.println("Dans quelle ligne voulez vous utiliser votre desintegrateur");
+                        lgn = ligne.nextInt();
+                    }
+                    plateau.placerDesintegrateur(lgn-1, cln-1);
                     n +=1;
-                } 
+                }               
                 
             }        
         }
