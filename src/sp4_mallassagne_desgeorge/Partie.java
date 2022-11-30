@@ -148,6 +148,7 @@ public class Partie {
                         joueurCourant.obtenirDesintegrateur();
                         plateau.supprimerDesintegrateur(cln-1, a);
                         System.out.println("Vous avez récupéré un désintegrateur!");
+                        
                     }
                     if(plateau.presenceTrouNoir(cln-1,a) == true){
                         plateau.supprimerJeton(cln-1, a);
@@ -190,6 +191,7 @@ public class Partie {
                         lgn = ligne.nextInt();
                     }
                     plateau.utiliserDesintegrateur(cln-1, lgn-1,joueurCourant);
+                    plateau.tasserLigne(cln-1);
                     
                 }               
             }
@@ -210,6 +212,7 @@ public class Partie {
                         joueurCourant.obtenirDesintegrateur();
                         plateau.supprimerDesintegrateur(cln-1, a);
                         System.out.println("Vous avez récupéré un désintegrateur!");
+                        plateau.tasserLigne(cln-1);
                         
                     }
                     if(plateau.presenceTrouNoir(cln-1, a) == true){
@@ -253,12 +256,14 @@ public class Partie {
                         lgn = ligne.nextInt();
                     }
                     plateau.utiliserDesintegrateur(cln-1, lgn-1,joueurCourant);
+                    plateau.tasserLigne(cln-1);
                     
                 }               
                 
             }
             n +=1;
         }
+        plateau.afficherGrilleSurConsole();
     }
 
 }

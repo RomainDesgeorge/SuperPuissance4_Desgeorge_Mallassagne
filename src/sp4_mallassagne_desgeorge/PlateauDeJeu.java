@@ -118,7 +118,7 @@ public class PlateauDeJeu {
                         }
                     }
         for (int a = 3;a<7;a++){
-            for(int b = 0; b<3;b++){
+            for(int b = 3; b<6;b++){
                     if (grille[a][b].lireCouleurDuJeton().equals(couleur)){
                         if (grille[a+1][b-1].lireCouleurDuJeton().equals(couleur)){
                             if (grille[a+2][b-2].lireCouleurDuJeton().equals(couleur)){
@@ -149,7 +149,7 @@ public class PlateauDeJeu {
     public boolean diagonaleDescendanteGagnantePourCouleur(String couleur){
         boolean verif = false;
         int win = 0;
-        for (int i = 0;i<4;i++){
+        for (int i = 4;i<7;i++){
             for(int j = 3; j<6;j++){
                     if (grille[i][j].lireCouleurDuJeton().equals(couleur)){
                         if (grille[i-1][j+1].lireCouleurDuJeton().equals(couleur)){
@@ -200,10 +200,12 @@ public class PlateauDeJeu {
     }
     public void tasserLigne(int ligne){
         for (int i=0;i<5;i++){
-            if (grille[ligne][i]==null){
-                if (grille[ligne][i+1] != null){
-                    grille[ligne][i] = grille[i+1][ligne];
-                    grille[ligne][i+1] = null;
+            Jeton jetonrecup;
+            if (grille[ligne][i].lireCouleurDuJeton() == "rien"){
+                if (grille[ligne][i+1].lireCouleurDuJeton() != "rien"){
+                    jetonrecup = grille[ligne][i+1].recupererJeton();
+                    grille[ligne][i].affecterJeton(jetonrecup);
+                    grille[ligne][i+1].supprimerJeton();
                 }
             }
         }
