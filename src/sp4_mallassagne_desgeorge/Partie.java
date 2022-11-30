@@ -144,14 +144,16 @@ public class Partie {
                         cln = colonne.nextInt();
                     }
                     int a = plateau.ajouterJetonDansColonne(joueurCourant.jouerJeton(), cln-1);
-                    if(plateau.presenceDesintegrateur(a,cln-1) == true){
+                    if(plateau.presenceDesintegrateur(cln-1,a) == true){
                         joueurCourant.obtenirDesintegrateur();
+                        plateau.supprimerDesintegrateur(cln-1, a);
+                        System.out.println("Vous avez récupéré un désintegrateur!");
                     }
-                    if(plateau.presenceTrouNoir(a,cln-1) == true){
-                        plateau.supprimerJeton(a, cln-1);
-                        plateau.supprimerTrouNoir(a, cln-1);
+                    if(plateau.presenceTrouNoir(cln-1,a) == true){
+                        plateau.supprimerJeton(cln-1, a);
+                        plateau.supprimerTrouNoir(cln-1, a);
                     }
-                    n +=1;
+                    
                 }
                 if (choix == 2){
                     int cln=10;
@@ -167,8 +169,8 @@ public class Partie {
                         lgn = ligne.nextInt();
                     }
                     
-                    plateau.recupererJeton(lgn-1, cln-1);
-                    n +=1;
+                    plateau.recupererJeton(cln-1, lgn-1);
+                    
                 }
                 if (choix == 3){
                     int cln=10;
@@ -187,11 +189,10 @@ public class Partie {
                         System.out.println("Dans quelle ligne voulez vous placer votre jeton");
                         lgn = ligne.nextInt();
                     }
-                    plateau.utiliserDesintegrateur(lgn-1, cln-1,joueurCourant);
-                    n +=1;
+                    plateau.utiliserDesintegrateur(cln-1, lgn-1,joueurCourant);
+                    
                 }               
             }
-            plateau.afficherGrilleSurConsole();
             if (n%2 == 1){
                 joueurCourant = listeJoueurs[1];
                 System.out.println("Que voulez vous faire, si vous voulez jouer un jeton tapez '1', si vous voulez récupérer un jeton, tapez '2' et si vous voulez utiliser un désintegrateur, tapez'3'");
@@ -205,14 +206,17 @@ public class Partie {
                         cln = colonne.nextInt();
                     }
                     int a = plateau.ajouterJetonDansColonne(joueurCourant.jouerJeton(), cln-1);
-                    if(plateau.presenceDesintegrateur(a,cln-1) == true){
+                    if(plateau.presenceDesintegrateur(cln-1, a) == true){
                         joueurCourant.obtenirDesintegrateur();
+                        plateau.supprimerDesintegrateur(cln-1, a);
+                        System.out.println("Vous avez récupéré un désintegrateur!");
+                        
                     }
-                    if(plateau.presenceTrouNoir(a,cln-1) == true){
-                        plateau.supprimerJeton(a, cln-1);
-                        plateau.supprimerTrouNoir(a, cln-1);
+                    if(plateau.presenceTrouNoir(cln-1, a) == true){
+                        plateau.supprimerJeton(cln-1, a);
+                        plateau.supprimerTrouNoir(cln-1, a);
                     }
-                    n +=1;
+                    
                 }
                 if (choix == 2){
                     int cln=10;
@@ -228,8 +232,8 @@ public class Partie {
                         lgn = ligne.nextInt(); 
                     }
                     
-                    plateau.recupererJeton(lgn-1, cln-1);
-                    n +=1;
+                    plateau.recupererJeton(cln-1, lgn-1);
+                    
                 }
                 if (choix == 3){
                     int cln=10;
@@ -248,11 +252,12 @@ public class Partie {
                         System.out.println("Dans quelle ligne voulez vous utiliser votre desintegrateur");
                         lgn = ligne.nextInt();
                     }
-                    plateau.utiliserDesintegrateur(lgn-1, cln-1,joueurCourant);
-                    n +=1;
+                    plateau.utiliserDesintegrateur(cln-1, lgn-1,joueurCourant);
+                    
                 }               
                 
-            }        
+            }
+            n +=1;
         }
     }
 

@@ -27,7 +27,12 @@ public class PlateauDeJeu {
                 break;
             }   
         }
+        if (grille[nb][nbligne].presenceDesintegrateur() == true){
+            grille[nb][nbligne].affecterJeton(jeton);
+            grille[nb][nbligne].placerDesintegrateur();
+        }else{
         grille[nb][nbligne].affecterJeton(jeton);
+        }
         return nbligne;
     }    
     public boolean grilleRemplie(){
@@ -182,11 +187,11 @@ public class PlateauDeJeu {
     public boolean etreGagnantePourCouleur(String couleur){
         boolean verif;
         verif = ligneGagnantePourCouleur(couleur);
-        if(verif = false){
+        if(verif == false){
             verif = colonneGagnantePourCouleur(couleur);
-            if(verif = false){
+            if(verif == false){
                 verif = diagonaleDescendanteGagnantePourCouleur(couleur);
-                if (verif = false){
+                if (verif == false){
                     verif = diagonaleMontanteGagnantePourCouleur(couleur);
                 }
             }
@@ -220,6 +225,10 @@ public class PlateauDeJeu {
     
     public void supprimerTrouNoir(int x, int y){
         grille[x][y].supprimerTrouNoir();        
+    }
+    
+    public void supprimerDesintegrateur(int x, int y){
+        grille[x][y].supprimerDesintegrateur();        
     }
     
     public void placerDesintegrateur(int x, int y){
