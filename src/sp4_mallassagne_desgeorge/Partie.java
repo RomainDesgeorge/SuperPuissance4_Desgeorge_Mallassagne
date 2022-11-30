@@ -133,9 +133,12 @@ public class Partie {
             plateau.afficherGrilleSurConsole();
             if (n%2 == 0){
                 joueurCourant = listeJoueurs[0];
-                System.out.println("Que voulez vous faire, si vous voulez jouer un jeton tapez '1', si vous voulez récupérer un jeton, tapez '2' et si vous voulez utiliser un désintegrateur, tapez'3'");
+                int choix = 10;
                 Scanner reponse = new Scanner (System.in);
-                int choix = reponse.nextInt();
+                while (choix>3 || choix<1){
+                System.out.println("Que voulez vous faire, si vous voulez jouer un jeton tapez '1'\nsi vous voulez récupérer un jeton, tapez '2' \nsi vous voulez utiliser un désintegrateur, tapez'3'");
+                    choix = reponse.nextInt();
+                }
                 if (choix == 1){
                     int cln=10;
                     Scanner colonne = new Scanner (System.in);
@@ -197,9 +200,12 @@ public class Partie {
             }
             if (n%2 == 1){
                 joueurCourant = listeJoueurs[1];
-                System.out.println("Que voulez vous faire, si vous voulez jouer un jeton tapez '1', si vous voulez récupérer un jeton, tapez '2' et si vous voulez utiliser un désintegrateur, tapez'3'");
+                int choix = 10;                
                 Scanner reponse = new Scanner (System.in);
-                int choix = reponse.nextInt();
+                while (choix>3 || choix<1){
+                    System.out.println("Que voulez vous faire, si vous voulez jouer un jeton tapez '1'\nsi vous voulez récupérer un jeton, tapez '2' \nsi vous voulez utiliser un désintegrateur, tapez'3'");
+                choix = reponse.nextInt();
+                }
                 if (choix == 1){
                     int cln=10;
                     Scanner colonne = new Scanner (System.in);
