@@ -234,6 +234,11 @@ public class PlateauDeJeu {
         return verif1;        
     }
     
+    public void utiliserDesintegrateur(int x,int y,Joueur joueur){
+        grille[x][y].supprimerJeton();
+        joueur.utiliserDesintegrateur();
+    }
+    
     public boolean presenceTrouNoir(int x, int y){
         boolean verif1=false;
         if(grille[x][y].presenceTrouNoir()==true){
