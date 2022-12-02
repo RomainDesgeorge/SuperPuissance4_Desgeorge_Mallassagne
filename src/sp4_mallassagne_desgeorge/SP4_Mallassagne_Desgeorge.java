@@ -19,7 +19,7 @@ public class SP4_Mallassagne_Desgeorge {
         Joueur joueur2 = new Joueur("joueur2");
         Partie partie = new Partie(joueur1,joueur2);
         partie.initialiserPartie();
-        partie.lancerPartie();
+        partie.lancerPartie(); 
         
     }
     
