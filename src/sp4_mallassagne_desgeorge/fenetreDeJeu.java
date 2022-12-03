@@ -251,6 +251,16 @@ public class fenetreDeJeu extends javax.swing.JFrame {
          
          listeJoueurs[0] = J1;
          listeJoueurs[1] = J2;
+         joueurCourant = listeJoueurs[0];
+         
+         lbl_j1_nom.setText(nomJoueur1);
+         lbl_j1_couleur.setText(J1.getCouleur());
+         lbl_j1_nbdesint.setText(J1.getNombreDesintegrateurs()+"");
+         lbl_j2_nbdesint.setText(J2.getNombreDesintegrateurs()+"");
+         lbl_j2_couleur.setText(J2.getCouleur());
+         lbl_j2_nom1.setText(nomJoueur2);
+         
+         lbl_jcourant.setText(joueurCourant.nom);
         int valeur=(int) (Math.random() * (2));
         if (valeur==0){
             listeJoueurs[0].affecterCouleur("rouge");
