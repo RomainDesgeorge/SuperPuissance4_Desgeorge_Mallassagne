@@ -280,6 +280,12 @@ public class PlateauDeJeu {
                         joueur2.ajouterJeton(jeton);
                     }
                 }
+                if(grille[i][j].presenceTrouNoir() == true){
+                    grille[i][j].supprimerTrouNoir();
+                }
+                if(grille[i][j].presenceDesintegrateur() == true){
+                    grille[i][j].supprimerDesintegrateur();
+                }
             }
         }
     }

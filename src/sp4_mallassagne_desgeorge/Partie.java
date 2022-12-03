@@ -270,6 +270,7 @@ public class Partie {
             n +=1;
         }
         plateau.afficherGrilleSurConsole();
+        plateau.viderGrille(joueurCourant, joueurCourant);
     }
 
 }

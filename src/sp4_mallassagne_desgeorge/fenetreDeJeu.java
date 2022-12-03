@@ -4,6 +4,8 @@
  */
 package sp4_mallassagne_desgeorge;
 
+import java.util.Scanner;
+
 /**
  *
  * @author rom
@@ -200,6 +202,9 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
         panneau_info_joueur.setVisible(true);
         panneau_info_jeu.setVisible(true);
+        initialiserPartie();
+        panneau_grille.repaint();
+        btn_start.setEnabled(false);
     }//GEN-LAST:event_btn_startActionPerformed
 
     /**
@@ -239,6 +244,13 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     
     
      public void attribuerCouleurAuxJoueurs(){
+         String nomJoueur1 = nom_joueur_1.getText();
+         Joueur J1 = new Joueur(nomJoueur1);
+         String nomJoueur2 = nom_joueur_2.getText();
+         Joueur J2 = new Joueur(nomJoueur2);
+         
+         listeJoueurs[0] = J1;
+         listeJoueurs[1] = J2;
         int valeur=(int) (Math.random() * (2));
         if (valeur==0){
             listeJoueurs[0].affecterCouleur("rouge");
@@ -308,6 +320,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         attribuerCouleurAuxJoueurs();
         creerEtAffecterJeton(listeJoueurs[1]);
         creerEtAffecterJeton(listeJoueurs[0]);
+        plateau.viderGrille(listeJoueurs[0], listeJoueurs[1]);
         placerTrousNoirsEtDesintegrateurs();
     }
 
