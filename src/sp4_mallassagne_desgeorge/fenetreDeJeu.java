@@ -236,6 +236,80 @@ public class fenetreDeJeu extends javax.swing.JFrame {
             }
         });
     }
+    
+    
+     public void attribuerCouleurAuxJoueurs(){
+        int valeur=(int) (Math.random() * (2));
+        if (valeur==0){
+            listeJoueurs[0].affecterCouleur("rouge");
+            listeJoueurs[1].affecterCouleur("jaune");
+        }
+        else{
+            listeJoueurs[0].affecterCouleur("jaune");
+            listeJoueurs[1].affecterCouleur("rouge");
+        }
+        
+    }
+     
+      public void creerEtAffecterJeton(Joueur j1){
+        if ("rouge".equals(j1.getCouleur())){
+            for (int i=0;i<31;i++){
+                Jeton jeton=new Jeton ("rouge");
+                j1.ajouterJeton(jeton);
+            }
+            
+        }
+        if ("jaune".equals(j1.getCouleur())){
+            for (int i=0;i<31;i++){
+                Jeton jeton=new Jeton ("jaune");
+                j1.ajouterJeton(jeton);
+            }
+            
+        }
+    }
+      
+      public void placerTrousNoirsEtDesintegrateurs(){
+        int i=0;
+        while (i<3){
+            int x=(int) (Math.random() * (9-3));
+            int y=(int) (Math.random() * (8-3));
+            if (plateau.presenceDesintegrateur(x,y)==false){
+                if (plateau.presenceTrouNoir(x,y)==false){
+                    plateau.placerTrouNoir(x,y);
+                    plateau.placerDesintegrateur(x,y);
+                    i+=1;
+                }
+            }
+                
+        }
+        while (i<5){
+            int x=(int) (Math.random() * (9-3));
+            int y=(int) (Math.random() * (8-3));
+            if (plateau.presenceDesintegrateur(x,y)==false){
+                if (plateau.presenceTrouNoir(x,y)==false){
+                    plateau.placerTrouNoir(x,y);
+                    i+=1;
+                }
+            }
+        }
+        while(i<7){
+            int x=(int) (Math.random() * (9-3));
+            int y=(int) (Math.random() * (8-3));
+            if (plateau.presenceDesintegrateur(x,y)==false){
+                if (plateau.presenceTrouNoir(x,y)==false){
+                    plateau.placerDesintegrateur(x,y);
+                    i+=1;
+                }
+            }
+        }
+    }
+     
+      public void initialiserPartie(){
+        attribuerCouleurAuxJoueurs();
+        creerEtAffecterJeton(listeJoueurs[1]);
+        creerEtAffecterJeton(listeJoueurs[0]);
+        placerTrousNoirsEtDesintegrateurs();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_cln_0;
