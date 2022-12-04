@@ -18,8 +18,9 @@ public class PlateauDeJeu {
             }
         }
     }
-    public int ajouterJetonDansColonne(Jeton jeton, int nb){
+    public int ajouterJetonDansColonne(Joueur joueur1, int nb){
         int nbligne = 0;
+        Jeton un_jeton = joueur1.jouerJeton();
         for(int i=0;i<5;i++){
             if (grille[nb][i].lireCouleurDuJeton() != "rien"){
                 nbligne += 1;
@@ -28,10 +29,10 @@ public class PlateauDeJeu {
             }   
         }
         if (grille[nb][nbligne].presenceDesintegrateur() == true){
-            grille[nb][nbligne].affecterJeton(jeton);
+            grille[nb][nbligne].affecterJeton(un_jeton);
             grille[nb][nbligne].placerDesintegrateur();
         }else{
-        grille[nb][nbligne].affecterJeton(jeton);
+        grille[nb][nbligne].affecterJeton(un_jeton);
         }
         return nbligne;
     }    
@@ -212,8 +213,8 @@ public class PlateauDeJeu {
     }
     public boolean colonneRemplie(int colonne){
         boolean verif = true;
-        for (int i=0;i<7;i++){
-                if (grille[i][colonne] == null){
+        for (int i=0;i<6;i++){
+                if (grille[colonne][i].lireCouleurDuJeton() == "rien"){
                     verif = false;
                     break;
                 }

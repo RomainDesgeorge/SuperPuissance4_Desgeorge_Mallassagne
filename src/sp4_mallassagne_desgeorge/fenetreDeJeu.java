@@ -176,24 +176,59 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         getContentPane().add(panneau_info_jeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 450, 290, 170));
 
         btn_cln_0.setText("1");
+        btn_cln_0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cln_0ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_cln_0, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, -1));
 
         btn_cln_1.setText("2");
+        btn_cln_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cln_1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_cln_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 10, 90, -1));
 
         btn_cln_2.setText("3");
+        btn_cln_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cln_2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_cln_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 10, 90, -1));
 
         btn_cln_3.setText("4");
+        btn_cln_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cln_3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_cln_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 10, 90, -1));
 
         btn_cln_4.setText("5");
+        btn_cln_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cln_4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_cln_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(394, 10, 90, -1));
 
         btn_cln_5.setText("6");
+        btn_cln_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cln_5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_cln_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 90, -1));
 
         btn_cln_6.setText("7");
+        btn_cln_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cln_6ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_cln_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(586, 10, 90, -1));
 
         setBounds(0, 0, 1044, 672);
@@ -207,9 +242,94 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         btn_start.setEnabled(false);
     }//GEN-LAST:event_btn_startActionPerformed
 
+    private void btn_cln_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cln_0ActionPerformed
+        // TODO add your handling code here:
+        jouerDansColonne(0);
+        if (plateau.colonneRemplie(0) == true) btn_cln_0.setEnabled(false);
+        joueurSuivant();
+    }//GEN-LAST:event_btn_cln_0ActionPerformed
+
+    private void btn_cln_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cln_1ActionPerformed
+        // TODO add your handling code here:
+        jouerDansColonne(1);
+        if (plateau.colonneRemplie(1) == true) btn_cln_1.setEnabled(false);
+        joueurSuivant();
+    }//GEN-LAST:event_btn_cln_1ActionPerformed
+
+    private void btn_cln_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cln_2ActionPerformed
+        // TODO add your handling code here:
+        jouerDansColonne(2);
+        if (plateau.colonneRemplie(2) == true) btn_cln_2.setEnabled(false);
+        joueurSuivant();
+    }//GEN-LAST:event_btn_cln_2ActionPerformed
+
+    private void btn_cln_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cln_3ActionPerformed
+        // TODO add your handling code here:
+        jouerDansColonne(3);
+        if (plateau.colonneRemplie(3) == true) btn_cln_3.setEnabled(false);
+        joueurSuivant();
+    }//GEN-LAST:event_btn_cln_3ActionPerformed
+
+    private void btn_cln_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cln_4ActionPerformed
+        // TODO add your handling code here:
+        jouerDansColonne(4);
+        if (plateau.colonneRemplie(4) == true) btn_cln_4.setEnabled(false);
+        joueurSuivant();
+    }//GEN-LAST:event_btn_cln_4ActionPerformed
+
+    private void btn_cln_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cln_5ActionPerformed
+        // TODO add your handling code here:
+        jouerDansColonne(5);
+        if (plateau.colonneRemplie(5) == true) btn_cln_5.setEnabled(false);
+        joueurSuivant();
+    }//GEN-LAST:event_btn_cln_5ActionPerformed
+
+    private void btn_cln_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cln_6ActionPerformed
+        // TODO add your handling code here:
+        jouerDansColonne(6);
+        if (plateau.colonneRemplie(6) == true) btn_cln_6.setEnabled(false);
+        joueurSuivant();
+    }//GEN-LAST:event_btn_cln_6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
+    
+    public void joueurSuivant(){
+        if (joueurCourant == listeJoueurs[0]){
+            joueurCourant = listeJoueurs[1];
+        }else{
+            joueurCourant = listeJoueurs[0];
+        }
+        lbl_jcourant.setText(joueurCourant.nom);
+    }
+    
+    public boolean jouerDansColonne(int cln){
+        boolean resultataction;
+        int a = plateau.ajouterJetonDansColonne(joueurCourant, cln);
+        if(plateau.presenceDesintegrateur(cln,a) == true){
+            joueurCourant.obtenirDesintegrateur();
+            plateau.supprimerDesintegrateur(cln, a);
+
+        }
+        if(plateau.presenceTrouNoir(cln,a) == true){
+            plateau.supprimerJeton(cln, a);
+            plateau.supprimerTrouNoir(cln, a);
+        }
+        panneau_grille.repaint();
+        
+        lbl_j1_nbdesint.setText(listeJoueurs[0].getNombreDesintegrateurs()+"");
+        lbl_j2_nbdesint.setText(listeJoueurs[1].getNombreDesintegrateurs()+"");
+        if (a<6){
+            resultataction = true;
+        }
+        else{
+            resultataction = false;
+        }
+        if (resultataction == true)return true;
+            
+        else return false;
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -252,15 +372,6 @@ public class fenetreDeJeu extends javax.swing.JFrame {
          listeJoueurs[0] = J1;
          listeJoueurs[1] = J2;
          joueurCourant = listeJoueurs[0];
-         
-         lbl_j1_nom.setText(nomJoueur1);
-         lbl_j1_couleur.setText(J1.getCouleur());
-         lbl_j1_nbdesint.setText(J1.getNombreDesintegrateurs()+"");
-         lbl_j2_nbdesint.setText(J2.getNombreDesintegrateurs()+"");
-         lbl_j2_couleur.setText(J2.getCouleur());
-         lbl_j2_nom1.setText(nomJoueur2);
-         
-         lbl_jcourant.setText(joueurCourant.nom);
         int valeur=(int) (Math.random() * (2));
         if (valeur==0){
             listeJoueurs[0].affecterCouleur("rouge");
@@ -270,6 +381,15 @@ public class fenetreDeJeu extends javax.swing.JFrame {
             listeJoueurs[0].affecterCouleur("jaune");
             listeJoueurs[1].affecterCouleur("rouge");
         }
+         lbl_j1_nom.setText(nomJoueur1);
+         lbl_j1_couleur.setText(J1.getCouleur());
+         lbl_j1_nbdesint.setText(J1.getNombreDesintegrateurs()+"");
+         lbl_j2_nbdesint.setText(J2.getNombreDesintegrateurs()+"");
+         lbl_j2_couleur.setText(J2.getCouleur());
+         lbl_j2_nom1.setText(nomJoueur2);
+         
+         lbl_jcourant.setText(joueurCourant.nom);
+
         
     }
      

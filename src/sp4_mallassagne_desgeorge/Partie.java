@@ -146,7 +146,7 @@ public class Partie {
                         System.out.println("Dans quelle colonne voulez vous placer votre jeton");
                         cln = colonne.nextInt();
                     }
-                    int a = plateau.ajouterJetonDansColonne(joueurCourant.jouerJeton(), cln-1);
+                    int a = plateau.ajouterJetonDansColonne(joueurCourant, cln-1);
                     if(plateau.presenceDesintegrateur(cln-1,a) == true){
                         joueurCourant.obtenirDesintegrateur();
                         plateau.supprimerDesintegrateur(cln-1, a);
@@ -213,7 +213,7 @@ public class Partie {
                         System.out.println("Dans quelle colonne voulez vous placer votre jeton");
                         cln = colonne.nextInt();
                     }
-                    int a = plateau.ajouterJetonDansColonne(joueurCourant.jouerJeton(), cln-1);
+                    int a = plateau.ajouterJetonDansColonne(joueurCourant, cln-1);
                     if(plateau.presenceDesintegrateur(cln-1, a) == true){
                         joueurCourant.obtenirDesintegrateur();
                         plateau.supprimerDesintegrateur(cln-1, a);
