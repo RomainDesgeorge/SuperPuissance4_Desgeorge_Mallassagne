@@ -320,6 +320,42 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         
         lbl_j1_nbdesint.setText(listeJoueurs[0].getNombreDesintegrateurs()+"");
         lbl_j2_nbdesint.setText(listeJoueurs[1].getNombreDesintegrateurs()+"");
+        
+        boolean vic_j1 = plateau.etreGagnantePourCouleur(listeJoueurs[0].getCouleur());
+        boolean vic_j2 = plateau.etreGagnantePourCouleur(listeJoueurs[1].getCouleur());
+        
+        if (vic_j1 && ! vic_j2){
+            jTextArea1.setText("Victoire de "+listeJoueurs[0].nom);
+            btn_cln_0.setEnabled(false);
+            btn_cln_1.setEnabled(false);
+            btn_cln_2.setEnabled(false);
+            btn_cln_3.setEnabled(false);
+            btn_cln_4.setEnabled(false);
+            btn_cln_5.setEnabled(false);
+            btn_cln_6.setEnabled(false);
+            
+        }
+        if (vic_j2 && ! vic_j1){
+            jTextArea1.setText("Victoire de "+listeJoueurs[1].nom);
+                        btn_cln_0.setEnabled(false);
+            btn_cln_1.setEnabled(false);
+            btn_cln_2.setEnabled(false);
+            btn_cln_3.setEnabled(false);
+            btn_cln_4.setEnabled(false);
+            btn_cln_5.setEnabled(false);
+            btn_cln_6.setEnabled(false);
+        }
+        if (vic_j2 &&  vic_j1){
+            if(joueurCourant == listeJoueurs[1])jTextArea1.setText("Victoire de "+listeJoueurs[0].nom+"faute de jeu de "+listeJoueurs[1].nom);
+            else jTextArea1.setText("Victoire de "+listeJoueurs[1].nom+"faute de jeu de "+listeJoueurs[0].nom);
+            btn_cln_0.setEnabled(false);
+            btn_cln_1.setEnabled(false);
+            btn_cln_2.setEnabled(false);
+            btn_cln_3.setEnabled(false);
+            btn_cln_4.setEnabled(false);
+            btn_cln_5.setEnabled(false);
+            btn_cln_6.setEnabled(false);
+        }
         if (a<6){
             resultataction = true;
         }
