@@ -16,7 +16,7 @@ public class CelluleDeGrille {
 
     
 }
-    private Jeton jetonCourant;
+    Jeton jetonCourant;
     private boolean avoirTrouNoir;
     private boolean avoirDesintegrateur;
     

@@ -25,6 +25,18 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         for (int i=5; i>=0;i--){
             for (int j=0; j<7;j++){
                 CelluleGraphique cellgraph = new CelluleGraphique(plateau.grille[j][i]);
+                cellgraph.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    CelluleDeGrille c = cellgraph.celluleassociee;
+                    if (c.jetonCourant == null) return;
+                    
+                    if (c.jetonCourant.lireCouleur() == joueurCourant.getCouleur()){
+                        jTextArea1.setText("Le joueur "+joueurCourant.nom+" récupère un de ses jetons");
+                    }else{
+                        jTextArea1.setText("Le joueur "+joueurCourant.nom+" veut désintegrer un jeton");
+                    }
+                }
+            });
                 panneau_grille.add(cellgraph);
             }
             
